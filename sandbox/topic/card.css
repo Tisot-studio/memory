@@ -1,0 +1,91 @@
+#new-card-screen {
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    overflow: hidden;
+    transition: all .6s ease-in-out;
+}
+
+#header-new-card, #footer-new-card {
+  position: fixed;
+  width: 100%;
+  height: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  z-index: 1;
+}
+
+#header-new-card {
+  top: 0;
+  padding: 0 1.2rem;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-bottom-color);
+  font-size: 1.2rem;
+}
+
+/* Input area */
+.input-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 80%;
+    height: 70%;
+  }
+
+  
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  outline: none;
+}
+
+.rotate {
+  transform: rotateY(180deg);
+}
+
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  outline: none;
+  text-align: center;
+  border: 2px solid;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  background-color: white;
+  color: black;
+  overflow: auto;
+  
+}
+
+/* Style the back side */
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.front-content, .back-content {
+  width: 90%;
+  height: auto;
+  outline: none;
+}

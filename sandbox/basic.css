@@ -1,0 +1,30 @@
+/* Contain general styles for app */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --border-bottom-color: rgb(219, 219, 219);;
+   } 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    color: #309BFF;
+    font-size: 1.2rem;
+  }
+
+button:active {
+    transform: scale(.98);
+}
+
+
+.outside {
+    opacity: 0;
+    transform: translateY(100vh);
+}

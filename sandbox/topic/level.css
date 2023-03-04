@@ -1,0 +1,94 @@
+#level-screen {
+    top: 0;
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    z-index: 2;
+    overflow: scroll;
+    background-color: white;
+    transition: all .4s ease-in-out;
+}
+
+
+#header-level, #footer-level {
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+    position: fixed;
+}
+
+#header-level {
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--border-bottom-color);
+}
+
+#footer-level {
+    bottom: 0;
+    border-top: 1px solid var(--border-bottom-color);
+}
+
+.cards-container {
+    margin-top: 3.5rem;
+    width: 100%;
+    height: 100vh;
+}
+
+#cards-list {
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem .5rem;
+}
+
+.level-card {
+    width: 5rem;
+    height: 6rem;
+    border: 1px solid;
+    border-radius: 10px;
+    margin: .5rem .5rem;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.level-screen-hidden {
+    transform: translateX(400px);
+}
+
+/* Current card */
+#current-card-screen {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    z-index: 3;
+    transition: all .6s ease-in-out;
+}
+
+#current-card-header, #current-card-footer {
+    width: 100%;
+    height: 8%;
+    padding: 0 1.2rem;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    position: fixed;
+}
+
+#current-card-header {
+    font-size: 1.2rem;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-bottom-color);
+}
+
+#current-card-footer {
+    justify-content: center;
+    bottom: 0;
+    border-top: 1px solid var(--border-bottom-color);
+}

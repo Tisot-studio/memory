@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./topic.css">
+    <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/level.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Topic</title>
+</head>
+<body>
+    <!-- Topic body -->
+    <div class="topic-wrapper">
+
+    <!-- Topic header -->
+        <div id="topic-header">
+            <div id="back-to-main-screen">
+                <i id="arrow-back" class="fa-solid fa-arrow-left"></i>
+            </div>
+            <div id="topic-title"></div>
+            <button id="delete-topic">Delete</button>
+        </div>
+
+        <!-- Card -->
+        <div class="new-card" hidden>
+            <div class="header-btns">
+                <button id="cancel">Cancel</button>
+                <p id="side">Front</p>
+                <button id="save-btn">Save</button>
+            </div>
+            
+            <!-- Input area -->
+            <div class="input-wrapper">
+                <div class="flip-card">
+                    <div class="flip-card-inner main">
+                    <div class="flip-card-front">
+                        <div class="front-content" contenteditable="true">front</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="back-content" contenteditable="true">back</div>
+                    </div>
+                    </div>
+                </div>
+                <div class="flip-card sub">
+                    <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="front-content" contenteditable="true">front</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="back-content" contenteditable="true">back</div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Btns -->
+            <div class="footer-btns">
+                <button id="flip-btn">Flip</button>
+            </div>
+        </div>
+
+<!-- Week header -->
+        <div class="week">
+            <div class="day">
+                <p>M</p>
+                <div class="state"></div>
+                <div class="level" style="background-color: red;"></div>
+                <div class="level" style="background-color: rgb(245, 164, 15);"></div>
+                <div class="level" style="background-color: rgb(255, 251, 10);"></div>
+                <div class="level" style="background-color: rgb(0, 255, 13);"></div>
+                <div class="level" style="background-color: rgb(25, 0, 255);"></div>
+                <div class="level" style="background-color: rgb(151, 2, 180);"></div>
+                <div class="level" style="background-color: rgb(255, 0, 242);"></div>
+            </div>
+            <div class="day">
+                <p>T</p>
+                <div class="state"></div>
+                <div class="level" style="background-color: red;"></div>
+                <div class="level" style="background-color: rgb(245, 164, 15);"></div>
+                <div class="level" style="background-color: rgb(255, 251, 10);"></div>
+                <div class="level" style="background-color: rgb(0, 255, 13);"></div>
+                <div class="level" style="background-color: rgb(25, 0, 255);"></div>
+                <div class="level" style="background-color: rgb(151, 2, 180);"></div>
+                <div class="level" style="background-color: rgb(255, 0, 242);"></div>
+            </div>
+            <div class="day">
+                <p>W</p>
+                <div class="state"></div>
+                <div class="level" style="background-color: red;"></div>
+                <div class="level" style="background-color: rgb(245, 164, 15);"></div>
+                <div class="level" style="background-color: rgb(255, 251, 10);"></div>
+                <div class="level" style="background-color: rgb(0, 255, 13);"></div>
+                <div class="level" style="background-color: rgb(25, 0, 255);"></div>
+                <div class="level" style="background-color: rgb(151, 2, 180);"></div>
+                <div class="level" style="background-color: rgb(255, 0, 242);"></div>
+            </div>
+            <div class="day">
+                <p>T</p>
+                <div class="state"></div>
+                <div class="level" style="background-color: red;"></div>
+                <div class="level" style="background-color: rgb(245, 164, 15);"></div>
+                <div class="level" style="background-color: rgb(255, 251, 10);"></div>
+                <div class="level" style="background-color: rgb(0, 255, 13);"></div>
+                <div class="level" style="background-color: rgb(25, 0, 255);"></div>
+                <div class="level" style="background-color: rgb(151, 2, 180);"></div>
+                <div class="level" style="background-color: rgb(255, 0, 242);"></div>
+            </div>
+            <div class="day">
+                <p>F</p>
+                <div class="state"></div>
+                <div class="level" style="background-color: red;"></div>
+                <div class="level" style="background-color: rgb(245, 164, 15);"></div>
+                <div class="level" style="background-color: rgb(255, 251, 10);"></div>
+                <div class="level" style="background-color: rgb(0, 255, 13);"></div>
+                <div class="level" style="background-color: rgb(25, 0, 255);"></div>
+                <div class="level" style="background-color: rgb(151, 2, 180);"></div>
+                <div class="level" style="background-color: rgb(255, 0, 242);"></div>
+            </div>
+            <div class="day">
+                <p>S</p>
+                <div class="state"></div>
+                <div class="level" style="background-color: red;"></div>
+                <div class="level" style="background-color: rgb(245, 164, 15);"></div>
+                <div class="level" style="background-color: rgb(255, 251, 10);"></div>
+                <div class="level" style="background-color: rgb(0, 255, 13);"></div>
+                <div class="level" style="background-color: rgb(25, 0, 255);"></div>
+                <div class="level" style="background-color: rgb(151, 2, 180);"></div>
+                <div class="level" style="background-color: rgb(255, 0, 242);"></div>
+            </div>
+            <div class="day">
+                <p>S</p>
+                <div class="state"></div>
+                <div class="level" style="background-color: red;"></div>
+                <div class="level" style="background-color: rgb(245, 164, 15);"></div>
+                <div class="level" style="background-color: rgb(255, 251, 10);"></div>
+                <div class="level" style="background-color: rgb(0, 255, 13);"></div>
+                <div class="level" style="background-color: rgb(25, 0, 255);"></div>
+                <div class="level" style="background-color: rgb(151, 2, 180);"></div>
+                <div class="level" style="background-color: rgb(255, 0, 242);"></div>
+            </div>
+        </div>
+        <div class="levels-list">
+            <div class="btn-container">
+                <p><b>Cards</b></p>
+                <button id="add-new-btn">Add new</button>
+            </div>
+            <div class="level-container" onclick="displayLevel('levelOne')">
+                <div class="level-number">
+                    <p>Level 1</p>
+                </div>
+                <div class="cards-ammount">
+                    lol
+                </div>
+            </div>
+            <div class="level-container" onclick="displayLevel('levelTwo')">
+                <div class="level-number">
+                    <p>Level 2</p>
+                </div>
+                <div class="cards-ammount"></div>
+            </div>
+            <div class="level-container" onclick="displayLevel('levelThree')">
+                <div class="level-number">
+                    <p>Level 3</p>
+                </div>
+                <div class="cards-ammount"></div>
+            </div>
+            <div class="level-container" onclick="displayLevel('levelFour')">
+                <div class="level-number">
+                    <p>Level 4</p>
+                </div>
+                <div class="cards-ammount"></div>
+            </div>
+            <div class="level-container" onclick="displayLevel('levelFive')">
+                <div class="level-number">
+                    <p>Level 5</p>
+                </div>
+                <div class="cards-ammount"></div>
+            </div>
+            <div class="level-container" onclick="displayLevel('levelSix')">
+                <div class="level-number">
+                    <p>Level 6</p>
+                </div>
+                <div class="cards-ammount"></div>
+            </div>
+            <div class="level-container" onclick="displayLevel('levelSeven')">
+                <div class="level-number">
+                    <p>Level 7</p>
+                </div>
+                <div class="cards-ammount"></div>
+            </div>
+            <div class="level-container" onclick="displayLevel('finishedCards')" style="border: none">
+                <div class="level-number">
+                    <p>Finished cards</p>
+                </div>
+                <div class="cards-ammount"></div>
+            </div>
+        </div>
+
+<!-- Level screen -->
+        <div id="level-screen" hidden>
+            <div id="header">
+                <div id="back-arrow">
+                    <i id="arrow-back" class="fa-solid fa-arrow-left"></i>
+                </div>
+                <div id="level-num"></div>
+                <button id="select">Select</button>
+            </div>
+            <div class="cards-container">
+                <div id="info"></div>
+                <div id="cards-list"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/progress.js"></script>
+<script src="./js/card.js"></script>
+<script src="./js/level.js"></script>
+</html>

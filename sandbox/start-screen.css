@@ -1,0 +1,131 @@
+.desctop-message {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#start-screen-container {
+  display: none;
+}
+
+/* Phone */
+@media only screen and (max-width: 400px) {
+    .desctop-message {
+      display: none;
+      
+    }
+/* Form */
+    #form-screen-container {
+      position: absolute;
+      display: block;
+      height: 100vh;
+      width: 100%;
+      top: 0;
+      z-index: 1;
+      background-color: white;
+      transition: all .6s ease-in-out;
+    }
+
+    #header-form {
+      position: fixed;
+      padding: 0 1.2rem;
+      width: 100%;
+      height: 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgb(255, 255, 255);
+    }
+
+    #form-container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #form-container > p {
+      margin: .5rem;
+      font-size: 1.2rem;
+    }
+
+    #form-container > input {
+      margin: .5rem;
+      padding: 0 .5rem;
+      height: 3rem;
+      width: 70%;
+      font-size: 1.2rem;
+      text-align: center;
+      outline: none;
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+
+/* Start screen */
+    #start-screen-container {
+      position: relative;
+      display: block;
+      height: 100vh;
+      width: 100%;
+    }
+
+    #topics-list {
+      width: 100%;
+      height: 100vh;
+      padding: 20% 0;
+      overflow: scroll;
+    }
+
+    .topic-item {
+      width: 90%;
+      height: 10%;
+      margin: 1rem auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      color: rgb(36, 36, 36);
+      background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+      border-radius: 10px;
+    }
+
+    #header-start, #footer {
+      position: fixed;
+      width: 100%;
+      height: 8%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(255, 255, 255);
+    }
+
+    #header-start {
+      top: 0;
+      border-bottom: 1px solid rgb(197, 197, 197);
+      font-size: 1.2rem;
+    }
+
+
+    #footer {
+      bottom: 0;
+      border-top: 1px solid rgb(197, 197, 197);
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+
+  }
+

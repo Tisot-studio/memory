@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <title>Memory App</title>
+    </head>
+    <body>
+        <!-- Form -->
+        <div id="form" class="form-container hidden">
+            <label for="title">What are you going to learn?</label>
+            <input type="text" id="title" required>
+            <button id="create-new-topic">Create</button>
+        </div>
+
+        <!-- Container for topics -->
+        <div class="start-screen">
+            <div id="topics-list"></div>
+        </div>
+
+        <!-- Button -->
+        <footer>
+            <button id="add-new-topic">Add New Topic</button>
+        </footer>
+    </body>
+    <script src="./js/index.js" type="module"></script>
+</html>
