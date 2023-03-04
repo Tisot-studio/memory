@@ -41,7 +41,19 @@
     background-color: transparent;
     width: 80%;
     height: 70%;
+    transition: all 1s ease-in-out;
+    animation: woop 1s;
   }
+  
+@keyframes woop {
+    from { transform: scale(0);}
+}
+
+.move-to-right {
+    transform: translateX(500px);
+    position: fixed;
+    z-index: 3;
+}
 
   
 .flip-card-inner {
