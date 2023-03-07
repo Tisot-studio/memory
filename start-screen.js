@@ -8,19 +8,19 @@ const topicsList = document.getElementById("topics-list");
 class Day {
     constructor(date) {
         this.date = date;
-        this.levelsList = [];
+        this.todayBoxes = [0, ];
         this.isDone = false;
     }
 
+// get num of level
     setLevelList(pivot) {
         const numOfDays = Math.floor((this.date - pivot) / 86400000 + 1);
-        if (numOfDays % 1 === 0) this.levelsList.push(1);
-        if (numOfDays % 2 === 0) this.levelsList.push(2);
-        if (numOfDays % 4 === 0) this.levelsList.push(3);
-        if (numOfDays % 8 === 0) this.levelsList.push(4);
-        if (numOfDays % 16 === 0) this.levelsList.push(5);
-        if (numOfDays % 32 === 0) this.levelsList.push(6);
-        if (numOfDays % 64 === 0) this.levelsList.push(7);
+        if (numOfDays % 2 === 0) this.todayBoxes.push(1);
+        if (numOfDays % 4 === 0) this.todayBoxes.push(2);
+        if (numOfDays % 8 === 0) this.todayBoxes.push(3);
+        if (numOfDays % 16 === 0) this.todayBoxes.push(4);
+        if (numOfDays % 32 === 0) this.todayBoxes.push(5);
+        if (numOfDays % 64 === 0) this.todayBoxes.push(6);
     }
 }
 
@@ -28,29 +28,12 @@ class Topic {
     constructor(title) {
         this.title = title;
         this.pivot = Date.now();
-        this.levelOne = [];
-        this.levelTwo = [];
-        this.levelThree = [];
-        this.levelFour = [];
-        this.levelFive = [];
-        this.levelSix = [];
-        this.levelSeven = [];
-        this.finishedCards = [];
         this.week = [];
-        this.lvlsList = [
-            this.levelOne,
-            this.levelTwo,
-            this.levelThree,
-            this.levelFour,
-            this.levelFive,
-            this.levelSix,
-            this.levelSeven,
-            this.finishedCards
-        ];
+        this.boxesList = [{}, {}, {}, {}, {}, {}, {}, {}];
     }
 
-    setWeek() {
-        const dayOfTheWeek = new Date().getDay();
+    setStartWeek() {
+        let dayOfTheWeek = new Date().getDay();
         for (let d = 1; d < 8; d++) {
             if (dayOfTheWeek > d) {
                 this.week.push(null);
@@ -59,6 +42,15 @@ class Topic {
                 day.setLevelList(this.pivot);
                 this.week.push(day);
             }
+        }
+    }
+
+    updateWeek() {
+        this.week = [];
+        for (let d = 0; d < 7; d++) {
+            const day = new Day(Date.now() + 86400000 * d);
+            day.setLevelList(this.pivot);
+            this.week.push(day);
         }
     }
 }
@@ -74,16 +66,16 @@ closeFromBtn.addEventListener("click", () => {
 function saveNewTopic() {
     if (topicTitle.value !== '') {
         const topic = new Topic(topicTitle.value);
-        topic.setWeek();
+        topic.setStartWeek();
         localStorage.setItem(topicTitle.value, JSON.stringify(topic));
     } else {
-        const tpcs = [];
+        const tpcs = [];    // ammount of topics in storage
         for (let t of Object.keys(localStorage)) {
             tpcs.push(t);
         }
         const newTopicTitle = `topic#${tpcs.length + 1}`;
         const topic = new Topic(newTopicTitle);
-        topic.setWeek();
+        topic.setStartWeek();
         localStorage.setItem(newTopicTitle, JSON.stringify(topic));
     }
 

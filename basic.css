@@ -26,5 +26,5 @@ button:active {
 
 .outside {
     /* opacity: 0; */
-    transform: translateY(100vh);
+    transform: translateY(120vh);
 }

@@ -11,6 +11,7 @@ let counter = 0;
 
 class Card {
     constructor(f, b) {
+        this.currentBox = 0;
         this.front = f;
         this.back = b;
     }
@@ -41,7 +42,7 @@ flipBtn.addEventListener("click", flipCard);
 
 
 // cards animation
-function createCard() {
+function createCard(container = inputWrapper) {
     const card = document.createElement("div");
     card.className = "flip-card";
 
@@ -67,7 +68,7 @@ function createCard() {
     flpCrdFrnt.append(frntCntn);
     flpCrdInnr.append(flpCrdFrnt, flpCrdBck);
     card.append(flpCrdInnr);
-    inputWrapper.append(card);
+    container.append(card);
 
     counter++;
 }
@@ -79,8 +80,7 @@ function saveCard() {
     let b = document.querySelector(".back-content");
 
     const newCard = new Card(f.textContent, b.textContent);
-    topicObj.levelOne.push(newCard);
-    topicObj.lvlsList[0] = topicObj.levelOne;
+    topicObj.boxesList[0][f.textContent] = newCard;
     localStorage.setItem(currentTopic, JSON.stringify(topicObj));
 
 // move card to right and create new

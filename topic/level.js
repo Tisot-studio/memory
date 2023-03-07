@@ -20,39 +20,40 @@ let currentLevel = '';
 let indxLvlInList = 0;
 
 function displayLevel(level) {
-    topicObj[level].forEach((el) => {
-        if (el !== null)
-            createLevelCard(el);
-    })
+
+    for (let c of Object.values(topicObj.boxesList[level])) {
+        createLevelCard(c);
+    }
+        
     switch(level) {
-        case "levelOne":
+        case 0:
             levelNum.textContent = "Level 1";
             break;
-        case "levelTwo":
+        case 1:
             levelNum.textContent = "Level 2";
             indxLvlInList = 1;
             break;
-        case "levelThree":
+        case 2:
             levelNum.textContent = "Level 3";
             indxLvlInList = 2;
             break;
-        case "levelFour":
+        case 3:
             levelNum.textContent = "Level 4";
             indxLvlInList = 3;
             break;
-        case "levelFive":
+        case 4:
             levelNum.textContent = "Level 5";
             indxLvlInList = 4;
             break;
-        case "levelSix":
+        case 5:
             levelNum.textContent = "Level 6";
             indxLvlInList = 5;
             break;
-        case "levelSeven":
+        case 6:
             levelNum.textContent = "Level 7";
             indxLvlInList = 6;
             break;
-        case "finishedCards":
+        case 7:
             levelNum.textContent = "Finished cards";
             indxLvlInList = 7;
             break;
@@ -80,7 +81,7 @@ function deleteLevelCards() {
 
 backToTopicScreenBtn.addEventListener("click", () => {
     levelScreen.classList.add("level-screen-hidden");
-    displayCardsAmmount(topicObj.lvlsList);
+    displayCardsAmmount(topicObj.boxesList);
     deleteLevelCards();
 })
 
@@ -93,7 +94,7 @@ function displayCard(el) {
     currentCardScreen.classList.remove("outside");
     currentCardFront.textContent = el.front;
     currentCardBack.textContent = el.back;
-    currentCard = el;
+    currentCard = el.front;
 }
 
 function flipCurrentCard() {
@@ -112,19 +113,7 @@ flipCurCardBtn.addEventListener("click", flipCurrentCard);
 
 
 function deleteCard() {
-    const indx = topicObj[currentLevel].indexOf(currentCard);
-    delete topicObj[currentLevel][indx];
-
-// create new array without nulls
-    topicObj[currentLevel].sort();
-    for (let i = topicObj[currentLevel].length - 1; i >= 0; i--) {
-        if (!topicObj[currentLevel][i])
-            topicObj[currentLevel].pop();
-        else
-            break;
-    }
-// ===============
-    topicObj.lvlsList[indxLvlInList] = topicObj[currentLevel];
+    delete topicObj.boxesList[currentLevel][currentCard];
     localStorage.setItem(currentTopic, JSON.stringify(topicObj));
     currentCardScreen.classList.add("outside");
     deleteLevelCards();
