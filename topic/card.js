@@ -4,7 +4,7 @@ const flipBtn = document.getElementById("flip-btn");
 
 // static html
 const side = document.getElementById("side");
-const inputWrapper = document.querySelector(".input-wrapper");
+const inputWrapper = document.querySelector(".new-card");
 
 let isFront = true;
 let counter = 0;
@@ -26,7 +26,7 @@ cancelBtn.addEventListener("click", () => {
 
 // card footer events
 function flipCard() {
-    const flipCardInner = document.querySelector(".flip-card-inner");
+    const flipCardInner = document.querySelector(".flip-inner-new-card");
     if (isFront) {
         flipCardInner.classList.toggle("rotate");
         side.textContent = "Back";
@@ -44,10 +44,10 @@ flipBtn.addEventListener("click", flipCard);
 // cards animation
 function createCard(container = inputWrapper) {
     const card = document.createElement("div");
-    card.className = "flip-card";
+    card.classList.add("flip-card", "flip-new-card");
 
     const flpCrdInnr = document.createElement("div");
-    flpCrdInnr.className = "flip-card-inner";
+    flpCrdInnr.classList.add("flip-card-inner", "flip-inner-new-card");
 
     const flpCrdFrnt = document.createElement("flip-card-front");
     flpCrdFrnt.className = "flip-card-front";
@@ -75,7 +75,7 @@ function createCard(container = inputWrapper) {
 
 
 function saveCard() {
-    const cardForMove = document.querySelector(".flip-card");
+    const cardForMove = document.querySelector(".flip-new-card");
     let f = document.querySelector(".front-content");
     let b = document.querySelector(".back-content");
 

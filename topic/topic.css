@@ -1,12 +1,15 @@
 /* Phone */
 @media only screen and (max-width: 400px) {
 
+    body {
+        overflow: hidden;
+    }
 
 /* Start screen */
     #topic-screen-container {
         width: 100%;
-        height: fit-content;
-        overflow: hidden;
+        height: 100vh;
+        overflow: scroll;
         position: relative;
     }
 
@@ -31,7 +34,7 @@
 /* Week */
     #week-container {
         width: 100%;
-        height: 23%;
+        height: 30vh;
         margin-top: 15%;
         display: flex;
         border-bottom: 1px solid var(--border-bottom-color);
