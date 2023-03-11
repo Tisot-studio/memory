@@ -13,10 +13,6 @@
 /* Phone */
 @media only screen and (max-width: 500px) {
 
-    html, body {
-      overflow: hidden;
-    }
-
     .desctop-message {
       display: none;
       

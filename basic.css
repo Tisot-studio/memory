@@ -11,6 +11,12 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+html, body {
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+  }
+
 button {
     border: none;
     background-color: transparent;
